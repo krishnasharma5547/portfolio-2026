@@ -1,0 +1,36 @@
+<svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Surfside Frozen production preview">
+  <defs>
+    <linearGradient id="sfBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4fbfd"/><stop offset="1" stop-color="#e2f4f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="460" fill="url(#sfBg)"/>
+  <circle cx="34" cy="34" r="6" fill="#f87171"/><circle cx="56" cy="34" r="6" fill="#fbbf24"/><circle cx="78" cy="34" r="6" fill="#34d399"/>
+  <text x="120" y="40" font-family="Inter,system-ui,sans-serif" font-size="17" font-weight="800" fill="#0e7490">Surfside Frozen Foods</text>
+  <!-- panel header -->
+  <rect x="34" y="70" width="732" height="60" rx="14" fill="#5bbfd0"/>
+  <text x="58" y="107" font-family="Inter,system-ui,sans-serif" font-size="20" font-weight="800" fill="#fff">06/04/2026 — Goals For Tomorrow</text>
+  <!-- detail rows -->
+  <g font-family="Inter,system-ui,sans-serif" font-size="14" fill="#0f172a">
+    <rect x="34" y="146" width="732" height="170" rx="14" fill="#ffffff"/>
+    <text x="58" y="186" fill="#64748b">MOA</text><text x="200" y="186" fill="#0e7490" font-weight="600">914000001006</text>
+    <text x="470" y="186" fill="#64748b">Lot Number</text><text x="600" y="186" fill="#0e7490" font-weight="600">15 (2026)</text>
+    <text x="58" y="220" fill="#64748b">Product</text><text x="200" y="220" fill="#0e7490" font-weight="600">Quahog Clam meat, 3/8" cut, I.Q.F</text>
+    <text x="58" y="254" fill="#64748b">Est# Boxes</text><text x="200" y="254" fill="#0e7490" font-weight="600">40</text>
+    <text x="360" y="254" fill="#64748b">Input Lbs.</text><text x="470" y="254" fill="#0e7490" font-weight="600">26,140</text>
+    <text x="58" y="288" fill="#64748b">Marination</text><text x="200" y="288" fill="#0e7490" font-weight="600">4 Bags Kena + 8 Bags Firm Tex</text>
+  </g>
+  <!-- lot chips -->
+  <g font-family="monospace" font-size="11" fill="#0e7490">
+    <rect x="34" y="334" width="120" height="26" rx="6" fill="#cdeaf0"/><text x="44" y="351">153140E15A01E</text>
+    <rect x="166" y="334" width="120" height="26" rx="6" fill="#cdeaf0"/><text x="176" y="351">153140E15A02E</text>
+    <rect x="298" y="334" width="120" height="26" rx="6" fill="#cdeaf0"/><text x="308" y="351">153140E15A03E</text>
+    <rect x="430" y="334" width="120" height="26" rx="6" fill="#cdeaf0"/><text x="440" y="351">153140E15A04E</text>
+    <rect x="562" y="334" width="120" height="26" rx="6" fill="#cdeaf0"/><text x="572" y="351">153140E15A05E</text>
+    <rect x="34" y="370" width="120" height="26" rx="6" fill="#cdeaf0"/><text x="44" y="387">153140E15A06E</text>
+    <rect x="166" y="370" width="120" height="26" rx="6" fill="#cdeaf0"/><text x="176" y="387">153140E15A07E</text>
+    <rect x="298" y="370" width="120" height="26" rx="6" fill="#cdeaf0"/><text x="308" y="387">153140E15A08E</text>
+    <rect x="430" y="370" width="120" height="26" rx="6" fill="#cdeaf0"/><text x="440" y="387">153140E15A09E</text>
+    <rect x="562" y="370" width="120" height="26" rx="6" fill="#cdeaf0"/><text x="572" y="387">153140E15A10E</text>
+  </g>
+</svg>

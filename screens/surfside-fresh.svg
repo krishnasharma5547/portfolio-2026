@@ -1,0 +1,39 @@
+<svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Surfside Fresh operations preview">
+  <defs>
+    <linearGradient id="frBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f2027"/><stop offset=".5" stop-color="#15403a"/><stop offset="1" stop-color="#1b4332"/>
+    </linearGradient>
+    <linearGradient id="frBar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#a7f3d0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="460" fill="url(#frBg)"/>
+  <circle cx="34" cy="34" r="6" fill="#f87171"/><circle cx="56" cy="34" r="6" fill="#fbbf24"/><circle cx="78" cy="34" r="6" fill="#34d399"/>
+  <text x="120" y="40" font-family="Inter,system-ui,sans-serif" font-size="17" font-weight="800" fill="#6ee7b7">Surfside Foods — Operations</text>
+  <text x="34" y="100" font-family="Inter,system-ui,sans-serif" font-size="22" font-weight="800" fill="#ffffff">Harvest &amp; Yield Dashboard</text>
+  <!-- KPI cards -->
+  <g font-family="Inter,system-ui,sans-serif">
+    <rect x="34" y="124" width="234" height="96" rx="16" fill="#ffffff" opacity=".06"/>
+    <rect x="283" y="124" width="234" height="96" rx="16" fill="#ffffff" opacity=".06"/>
+    <rect x="532" y="124" width="234" height="96" rx="16" fill="#ffffff" opacity=".06"/>
+    <text x="58" y="160" font-size="12" fill="#6ee7b7" font-weight="700">DOWNTIME</text>
+    <text x="58" y="200" font-size="34" font-weight="800" fill="#fff">0</text>
+    <text x="307" y="160" font-size="12" fill="#6ee7b7" font-weight="700">REPORTING CUT</text>
+    <text x="307" y="200" font-size="34" font-weight="800" fill="#fff">55%</text>
+    <text x="556" y="160" font-size="12" fill="#6ee7b7" font-weight="700">MODULES</text>
+    <text x="556" y="200" font-size="34" font-weight="800" fill="#fff">3</text>
+  </g>
+  <!-- bar chart -->
+  <rect x="34" y="244" width="732" height="184" rx="16" fill="#ffffff" opacity=".05"/>
+  <g fill="url(#frBar)">
+    <rect x="74" y="330" width="44" height="74" rx="6"/>
+    <rect x="148" y="300" width="44" height="104" rx="6"/>
+    <rect x="222" y="346" width="44" height="58" rx="6"/>
+    <rect x="296" y="284" width="44" height="120" rx="6"/>
+    <rect x="370" y="312" width="44" height="92" rx="6"/>
+    <rect x="444" y="268" width="44" height="136" rx="6"/>
+    <rect x="518" y="320" width="44" height="84" rx="6"/>
+    <rect x="592" y="296" width="44" height="108" rx="6"/>
+    <rect x="666" y="278" width="44" height="126" rx="6"/>
+  </g>
+</svg>

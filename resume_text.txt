@@ -1,0 +1,68 @@
+--- PAGE 1 ---
+Krishna Kant Sharma
+Senior Software Engineer (5+ YOE) Full-Stack | AI/ML Engineering | Distributed Systems Architectures
+LinkedIn |  +91 8445080110 |  kksharmaz786@gmail.com |  GitHub |  krishnakantsharma.netlify.app
+Skills
+Experience
+Devslane Founding Engineer & Senior Full-Stack AI Engineer Jun 2021 - Present
+Second Chair / Portia 05/2024 - Present
+Matrix Rental Solutions 11/2022 - 04/2024
+Surfside Foods 06/2021 - 10/2022
+Achievements
+Education
+System Architecture: Microservices, Multi-Tenant Systems, Event-Driven Architecture (Bull Queues, Redis),
+WebSockets, SSE Streaming, CI/CD, Docker
+●
+AI & ML: LLMs (GPT-4o, Claude, Gemini), RAG, MCP, LangChain, Vector Databases (pgvector), Tool / Function Calling,
+Prompt Engineering, Python
+●
+Backend: Node.js, Express.js, AdonisJS 6, TypeScript, REST, PostgreSQL, MySQL, Redis, Sequelize●
+Frontend: React.js, Redux Toolkit / Saga, TypeScript, JavaScript, Material-UI, TailwindCSS, HTML, CSS●
+Cloud & DevOps: AWS (S3, EC2), GCP, Docker, Bitbucket CI, Sentry, Postmark●
+AI-Native Legal Workspace: Architected the core engine behind an AI-native legal workspace — document-aware chat,
+automated redlining, and multi-stage review — wiring LangChain, tool calls, and SSE streaming across an AdonisJS 6
++ React stack.
+●
+Multi-Tenant RAG: Built a RAG pipeline with per-scope vector isolation across cases, clients, and statutes on
+pgvector with cosine-similarity retrieval and a Redis cache for sub-second reads, eliminating 40% of manual review
+workload.
+●
+Multi-Model Orchestration: Ran GPT-4o, Claude, and Gemini in parallel via async generators, streaming a side-by-
+side “second opinion” comparison view used daily by attorneys and cutting research turnaround by 60%.
+●
+Document Review & Redlining: Engineered a structured-output diffing system — LLM edits diffed against the source,
+surfaced in a React diff view, and persisted as immutable, fully attributable versions; ingestion handles PDF / DOCX /
+MD / TXT with semantic chunking, reducing manual drafting time by 70%.
+●
+High-Scale Platform: Built and scaled an applicant-and-landlord rental platform that crossed 15,000+ MAU, owning
+onboarding, identity / income verification, and landlord decisioning dashboards across web and mobile-friendly flows.
+●
+Ability-to-Pay Scoring: Built a deterministic scoring service integrating real-time income, asset, and rental-history data
+into decision-ready application packages, cutting manual review time by 50%.
+●
+Workflow Automation: Replaced PDF / email back-and-forth with an auditable, status-driven pipeline that cut
+application-to-approval time by ~50% and reduced operational overhead.
+●
+Multi-Tenant RBAC: Hardened access control across landlord, property-manager, and applicant roles, with structured
+audit logging for fair-housing compliance review.
+●
+Operations Platform: Built an end-to-end operations platform (harvest, packing, distribution, yield reporting) plus a zero-
+downtime sync engine bridging legacy on-prem and cloud via idempotent, replayable migrations.
+●
+Reporting & UI: Delivered Excel (exceljs) and PDF (jsPDF) compliance reporting and a React + Material-UI plant-floor
+UI with shift / downtime notifications, reducing manual reporting effort by 55%.
+●
+Backend Domains: Modeled dozens of TypeScript / Sequelize domains — boats, harvest locations, coolers, shift / break
+tracking, packing, distribution, and yield — with S3-backed SOP / inspection storage and a tightened CI pipeline (TSLint,
+Prettier, Husky).
+●
+Team Leadership: Led and mentored a team of 8 developers across multiple product squads, owning architecture, code
+reviews, and delivery.
+●
+Academic Standing: Graduated in the Top 5% of the cohort at GLA University.●
+Real-World Impact: Shipped production solutions to real-world business problems across legal-tech, PropTech, and
+operations — from AI-native review pipelines to high-scale rental platforms.
+●
+B.Tech in Computer Science, GLA University (2018 – 2022), Mathura●
+Class XII (PCM), CBSE Board — Rajendra Lohia Vidya Mandir, Hathras●
+Class X, CBSE — Maharishi Vidya Mandir, Aligarh●
