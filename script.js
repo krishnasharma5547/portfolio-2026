@@ -321,7 +321,16 @@
   function getAnchorCenter() {
     if (!anchor) return { x: window.innerWidth / 2 - CARD_W / 2, y: window.innerHeight / 2 - CARD_H / 2 };
     const r = anchor.getBoundingClientRect();
-    return { x: r.left + r.width / 2 - CARD_W / 2, y: r.top + r.height / 2 - CARD_H / 2 };
+    // Center the card between the two names' inner edges (names differ in length,
+    // so the viewport centre looks off-balance) — fall back to the anchor centre.
+    let cx = r.left + r.width / 2;
+    const nl = $('#hero-word-left'), nr = $('#hero-word-right');
+    if (nl && nr) {
+      const lr = nl.getBoundingClientRect().right;
+      const rl = nr.getBoundingClientRect().left;
+      if (rl - lr > CARD_W) cx = (lr + rl) / 2;
+    }
+    return { x: cx - CARD_W / 2, y: r.top + r.height / 2 - CARD_H / 2 };
   }
   const skillsAnchor = document.getElementById('skills-card-anchor');
   function getSkillsPos() {

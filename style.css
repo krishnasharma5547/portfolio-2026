@@ -105,6 +105,24 @@ body.cursor-clicked .cursor-ring { transform: translate(-50%,-50%) scale(0.7); }
   background: rgba(233, 233, 231, 0.55);
 }
 
+/* Top-right quick actions (Download CV / LinkedIn) */
+.hero-actions {
+  position: absolute; top: 26px; right: 6%; z-index: 6;
+  display: flex; gap: 10px; align-items: center;
+}
+.hero-action {
+  font-size: 13px; font-weight: 600; color: var(--text);
+  padding: 9px 18px; border-radius: 100px;
+  border: 1px solid rgba(0,0,0,0.16);
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.2s var(--ease);
+}
+.hero-action:hover {
+  border-color: var(--accent); color: var(--accent);
+  background: rgba(255,255,255,0.85); transform: translateY(-1px);
+}
+
 /* ── ANIMATED AURORA (depth blobs) ── */
 .hero-aurora {
   position: absolute; inset: 0; z-index: 0;
@@ -264,11 +282,17 @@ body.cursor-clicked .cursor-ring { transform: translate(-50%,-50%) scale(0.7); }
 
 /* ── HERO WORDS (masked slide-in per character) ── */
 .hero-word {
-  font-size: clamp(3.5rem, 7vw, 9rem);
-  font-weight: 900; letter-spacing: -0.06em; line-height: 0.92;
+  font-family: 'Clash Display', 'Space Grotesk', 'Inter', sans-serif;
+  font-size: clamp(3.7rem, 7.6vw, 9.6rem);
+  font-weight: 700; letter-spacing: -0.02em; line-height: 0.92;
   color: var(--text); overflow: hidden;
   display: block;
   white-space: nowrap;
+  /* Horizontal breathing room so the last glyph (e.g. the "A") isn't clipped
+     by overflow:hidden + negative letter-spacing. Negative margin keeps the
+     visual position unchanged; vertical stays tight for the slide-up mask. */
+  padding: 0 0.16em;
+  margin: 0 -0.16em;
 }
 /* Characters: each wrapped in a span.char, slides up */
 .hero-word .char {
@@ -1147,7 +1171,7 @@ body.cursor-clicked .cursor-ring { transform: translate(-50%,-50%) scale(0.7); }
 
 /* Background code decoration */
 .edu-section::before {
-  content: 'const graduate = {\n  university: "GLA",\n  degree: "B.Tech CSE",\n  batch: "2017-2021",\n  rank: "Top 5%"\n}';
+  content: 'const graduate = {\n  university: "GLA",\n  degree: "B.Tech CSE",\n  batch: "2017-2021",\n  rank: "Top 3%"\n}';
   position: absolute; top: 80px; right: 6%;
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px; line-height: 2;
@@ -1300,12 +1324,22 @@ body.cursor-clicked .cursor-ring { transform: translate(-50%,-50%) scale(0.7); }
   .hero-name-left, .hero-name-right { align-items: center; padding: 0; text-align: center; }
   .hero-card-anchor { display: none; }
   .floating-card { display: none !important; }
-  .hero-code-float, .hero-typed { display: none; }
+  /* Show the floating code lines on mobile too (in the top/bottom margins) */
+  .hero-typed { display: none; }
+  .hero-code-float { display: block; }
+  .ctok { font-size: 10.5px !important; padding: 4px 9px !important; }
+  .ctok:nth-child(1) { top: 7.5% !important; left: 3% !important; right: auto !important; }
+  .ctok:nth-child(2) { top: 10.5% !important; right: 3% !important; left: auto !important; }
+  .ctok:nth-child(3) { top: auto !important; bottom: 14% !important; left: 3% !important; right: auto !important; }
+  .ctok:nth-child(4) { top: auto !important; bottom: 8% !important; right: 3% !important; left: auto !important; }
+  .hero-actions { top: 16px; right: 4%; gap: 6px; }
+  .hero-action { font-size: 10.5px; padding: 6px 11px; }
   /* Photo column: KRISHNA → photo → KANT */
-  .hero-photo-mobile { display: block; width: min(60vw, 280px); margin: 6px auto; }
+  .hero-photo-mobile { display: block; width: min(60vw, 280px); margin: 6px auto; position: relative; z-index: 4; }
   .hero-photo-mobile img {
     width: 100%; aspect-ratio: 1 / 1.18; object-fit: cover; object-position: top center;
     border-radius: 20px;
+    background: #111;
     box-shadow: 0 26px 60px -22px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.5);
   }
   .hero-name-right .hero-label { display: none; }

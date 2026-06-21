@@ -1,525 +1,835 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Krishna Kant Sharma — Senior Software Engineer</title>
-  <meta name="description" content="Senior Full-Stack & AI/ML Engineer with 5+ years building production-grade systems. Expert in Node.js, AdonisJS, React, LangChain, RAG pipelines." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=30" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krishna Kant Sharma — Senior Software Engineer</title>
+    <meta
+      name="description"
+      content="Senior Full-Stack & AI/ML Engineer with 5+ years building production-grade systems. Expert in Node.js, AdonisJS, React, LangChain, RAG pipelines."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css?v=45" />
+  </head>
+  <body>
+    <!-- PRELOADER -->
+    <div id="preloader" class="preloader">
+      <div class="pre-counter" id="pre-counter">0%</div>
+      <div class="pre-bar"><div class="pre-fill" id="pre-fill"></div></div>
+      <div class="pre-label">Loading</div>
+    </div>
 
-  <!-- PRELOADER -->
-  <div id="preloader" class="preloader">
-    <div class="pre-counter" id="pre-counter">0%</div>
-    <div class="pre-bar"><div class="pre-fill" id="pre-fill"></div></div>
-    <div class="pre-label">Loading</div>
-  </div>
+    <!-- CUSTOM CURSOR -->
+    <div id="cursor-dot" class="cursor-dot"></div>
+    <div id="cursor-ring" class="cursor-ring"></div>
 
-  <!-- CUSTOM CURSOR -->
-  <div id="cursor-dot" class="cursor-dot"></div>
-  <div id="cursor-ring" class="cursor-ring"></div>
+    <!-- CODING BACKGROUND ANIMATION (canvas) -->
+    <canvas id="code-canvas" class="code-canvas" aria-hidden="true"></canvas>
 
-  <!-- CODING BACKGROUND ANIMATION (canvas) -->
-  <canvas id="code-canvas" class="code-canvas" aria-hidden="true"></canvas>
-
-  <!-- ══════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════
        HERO SECTION
        Layout: [KRISHNA] [CARD-CENTER] [KANT]
   ══════════════════════════════════════════════ -->
-  <section id="hero" class="hero">
+    <section id="hero" class="hero">
+      <!-- Animated aurora depth layer -->
+      <div class="hero-aurora" aria-hidden="true">
+        <span class="aurora-blob ab-1"></span>
+        <span class="aurora-blob ab-2"></span>
+        <span class="aurora-blob ab-3"></span>
+      </div>
 
-    <!-- Animated aurora depth layer -->
-    <div class="hero-aurora" aria-hidden="true">
-      <span class="aurora-blob ab-1"></span>
-      <span class="aurora-blob ab-2"></span>
-      <span class="aurora-blob ab-3"></span>
-    </div>
+      <!-- Floating syntax-highlighted code tokens (developer theme) -->
+      <div class="hero-code-float" id="hero-code-float" aria-hidden="true">
+        <span class="ctok" data-depth="0.8" style="top: 14%; left: 8%">
+          <em>const</em> engineer <i>=</i> <em>await</em> <b>hire</b>()
+        </span>
+        <span class="ctok" data-depth="1.6" style="top: 24%; right: 9%">
+          <em>async</em> <b>function</b> <s>ship</s>() <i>{</i> … <i>}</i>
+        </span>
+        <span class="ctok" data-depth="1.1" style="top: 70%; left: 6%">
+          rag.<b>retrieve</b>(<u>"context"</u>) <i>=&gt;</i> <em>LLM</em>
+        </span>
+        <span class="ctok" data-depth="2" style="top: 80%; right: 7%">
+          <i>&lt;</i><s>System</s> <b>scalable</b><i>/&gt;</i>
+        </span>
+      </div>
 
-    <!-- Floating syntax-highlighted code tokens (developer theme) -->
-    <div class="hero-code-float" id="hero-code-float" aria-hidden="true">
-      <span class="ctok" data-depth="0.8" style="top:14%; left:8%">
-        <em>const</em> engineer <i>=</i> <em>await</em> <b>hire</b>()
-      </span>
-      <span class="ctok" data-depth="1.6" style="top:24%; right:9%">
-        <em>async</em> <b>function</b> <s>ship</s>() <i>{</i> … <i>}</i>
-      </span>
-      <span class="ctok" data-depth="1.1" style="top:70%; left:6%">
-        rag.<b>retrieve</b>(<u>"context"</u>) <i>=&gt;</i> <em>LLM</em>
-      </span>
-      <span class="ctok" data-depth="2" style="top:80%; right:7%">
-        <i>&lt;</i><s>System</s> <b>scalable</b><i>/&gt;</i>
-      </span>
-    </div>
+      <!-- Typing code line at top -->
+      <div class="hero-typed" aria-hidden="true">
+        <span class="ht-prompt">~/krishna</span>
+        <span class="ht-text" id="ht-text"></span>
+        <span class="ht-caret"></span>
+      </div>
 
-    <!-- Typing code line at top -->
-    <div class="hero-typed" aria-hidden="true">
-      <span class="ht-prompt">~/krishna</span>
-      <span class="ht-text" id="ht-text"></span>
-      <span class="ht-caret"></span>
-    </div>
+      <!-- Top-right quick actions -->
+      <div class="hero-actions">
+        <a href="Krishna_Kant_Sharma_Resume7.pdf" download class="hero-action">Download CV ↓</a>
+        <a href="https://www.linkedin.com/in/krishna-kant-sharma-253a98195/" target="_blank" rel="noopener" class="hero-action">LinkedIn ↗</a>
+      </div>
 
-    <!-- Isometric hex bg -->
-    <div class="hex-bg" id="hex-bg" aria-hidden="true">
-      <svg class="hex-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-        <defs>
-          <pattern id="hex-pattern" x="0" y="0" width="100" height="115.47" patternUnits="userSpaceOnUse">
-            <polygon points="50,0 100,28.87 100,86.6 50,115.47 0,86.6 0,28.87"
-              fill="none" stroke="rgba(0,0,0,0.055)" stroke-width="1"/>
-            <polygon points="50,57.74 0,28.87 0,86.6 50,115.47"
-              fill="rgba(0,0,0,0.014)" stroke="rgba(0,0,0,0.055)" stroke-width="1"/>
-            <polygon points="50,57.74 100,28.87 100,86.6 50,115.47"
-              fill="rgba(0,0,0,0.022)" stroke="rgba(0,0,0,0.055)" stroke-width="1"/>
-            <polygon points="50,0 0,28.87 50,57.74 100,28.87"
-              fill="rgba(255,255,255,0.25)" stroke="rgba(0,0,0,0.055)" stroke-width="1"/>
-          </pattern>
-        </defs>
-        <rect width="200%" height="200%" fill="url(#hex-pattern)" transform="translate(-50,-57)"/>
-      </svg>
-    </div>
+      <!-- Isometric hex bg -->
+      <div class="hex-bg" id="hex-bg" aria-hidden="true">
+        <svg
+          class="hex-svg"
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="100%"
+        >
+          <defs>
+            <pattern
+              id="hex-pattern"
+              x="0"
+              y="0"
+              width="100"
+              height="115.47"
+              patternUnits="userSpaceOnUse"
+            >
+              <polygon
+                points="50,0 100,28.87 100,86.6 50,115.47 0,86.6 0,28.87"
+                fill="none"
+                stroke="rgba(0,0,0,0.055)"
+                stroke-width="1"
+              />
+              <polygon
+                points="50,57.74 0,28.87 0,86.6 50,115.47"
+                fill="rgba(0,0,0,0.014)"
+                stroke="rgba(0,0,0,0.055)"
+                stroke-width="1"
+              />
+              <polygon
+                points="50,57.74 100,28.87 100,86.6 50,115.47"
+                fill="rgba(0,0,0,0.022)"
+                stroke="rgba(0,0,0,0.055)"
+                stroke-width="1"
+              />
+              <polygon
+                points="50,0 0,28.87 50,57.74 100,28.87"
+                fill="rgba(255,255,255,0.25)"
+                stroke="rgba(0,0,0,0.055)"
+                stroke-width="1"
+              />
+            </pattern>
+          </defs>
+          <rect
+            width="200%"
+            height="200%"
+            fill="url(#hex-pattern)"
+            transform="translate(-50,-57)"
+          />
+        </svg>
+      </div>
 
-    <!-- Name LEFT -->
-    <div class="hero-name-left">
-      <p class="hero-label" id="hl-left">Senior Software Engineer</p>
-      <h1 class="hero-word" id="hero-word-left">KRISHNA</h1>
-    </div>
+      <!-- Name LEFT -->
+      <div class="hero-name-left">
+        <p class="hero-label" id="hl-left">Senior Software Engineer</p>
+        <h1 class="hero-word" id="hero-word-left">KRISHNA</h1>
+      </div>
 
-    <!-- CARD ANCHOR (center column spacer) -->
-    <div class="hero-card-anchor" id="hero-card-anchor"></div>
+      <!-- CARD ANCHOR (center column spacer) -->
+      <div class="hero-card-anchor" id="hero-card-anchor"></div>
 
-    <!-- Mobile-only photo: sits between the two names in the stacked column -->
-    <div class="hero-photo-mobile" aria-hidden="true">
-      <img src="krishna_photo.jpg" alt="Krishna Kant Sharma"
-        onerror="this.style.display='none';this.parentElement.classList.add('no-photo')" />
-    </div>
+      <!-- Mobile-only photo: sits between the two names in the stacked column -->
+      <div class="hero-photo-mobile" aria-hidden="true">
+        <img
+          src="kk.png"
+          alt="Krishna Kant Sharma"
+          onerror="
+            this.style.display = 'none';
+            this.parentElement.classList.add('no-photo');
+          "
+        />
+      </div>
 
-    <!-- Name RIGHT -->
-    <div class="hero-name-right">
-      <p class="hero-label" id="hl-right">Full-Stack · AI/ML · Systems</p>
-      <h1 class="hero-word" id="hero-word-right">KANT</h1>
-      <p class="hero-location">India &mdash; <span id="clock">09:55</span> IST</p>
-    </div>
+      <!-- Name RIGHT -->
+      <div class="hero-name-right">
+        <p class="hero-label" id="hl-right">Full-Stack · AI/ML · Systems</p>
+        <h1 class="hero-word" id="hero-word-right">KANT</h1>
+        <p class="hero-location">
+          India &mdash; <span id="clock">09:55</span> IST
+        </p>
+      </div>
+    </section>
 
-  </section>
-
-  <!-- ══════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════
        SKILLS SECTION
   ══════════════════════════════════════════════ -->
-  <section id="skills" class="skills-section">
-    <div class="container">
-      <div class="skills-layout">
-        
-        <!-- LEFT COLUMN: Sticky Text & Profile Card (moved from JS) -->
-        <div class="skills-left-col">
-          <div class="skills-sticky-head">
-            <p class="eyebrow">/ Services, Skills, Abilities</p>
-            <h2 class="section-title">What I do <em>best?</em></h2>
-            <p class="section-sub">I build, architect, and ship production-grade systems — full-stack engineering, AI/ML pipelines, and modern frontend experiences.</p>
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <div class="skills-layout">
+          <!-- LEFT COLUMN: Sticky Text & Profile Card (moved from JS) -->
+          <div class="skills-left-col">
+            <div class="skills-sticky-head">
+              <p class="eyebrow">/ Services, Skills, Abilities</p>
+              <h2 class="section-title">What I do <em>best?</em></h2>
+              <p class="section-sub">
+                I build, architect, and ship production-grade systems —
+                full-stack engineering, AI/ML pipelines, and modern frontend
+                experiences.
+              </p>
+            </div>
+            <div id="skills-card-anchor" class="hero-card-anchor"></div>
           </div>
-          <div id="skills-card-anchor" class="hero-card-anchor"></div>
-        </div>
 
-        <!-- RIGHT COLUMN: Stack of Cards -->
-        <div class="skills-right-col">
-          <div class="skill-stack">
+          <!-- RIGHT COLUMN: Stack of Cards -->
+          <div class="skills-right-col">
+            <div class="skill-stack">
+              <div class="skill-card sc-1" data-wm="01">
+                <div class="sc-eyebrow">Top Performing</div>
+                <h3 class="sc-num-title">01. Backend Systems</h3>
+                <p class="sc-desc">
+                  Microservices, event-driven architecture, REST APIs,
+                  WebSockets, SSE streaming, and distributed systems at scale.
+                </p>
+                <ul class="sc-list">
+                  <li>Node.js / AdonisJS 6 / Express.js</li>
+                  <li>TypeScript end-to-end</li>
+                  <li>PostgreSQL / Redis / BullMQ</li>
+                  <li>RESTful APIs & WebSocket channels</li>
+                  <li>Event-driven microservices</li>
+                </ul>
+              </div>
 
-            <div class="skill-card sc-1" data-wm="01">
-              <div class="sc-eyebrow">Top Performing</div>
-              <h3 class="sc-num-title">01. Backend Systems</h3>
-              <p class="sc-desc">Microservices, event-driven architecture, REST APIs, WebSockets, SSE streaming, and distributed systems at scale.</p>
-              <ul class="sc-list">
-                <li>Node.js / AdonisJS 6 / Express.js</li>
-                <li>TypeScript end-to-end</li>
-                <li>PostgreSQL / Redis / BullMQ</li>
-                <li>RESTful APIs & WebSocket channels</li>
-                <li>Event-driven microservices</li>
-              </ul>
+              <div class="skill-card sc-2" data-wm="02">
+                <div class="sc-eyebrow">Intelligence Layer</div>
+                <h3 class="sc-num-title">02. AI / ML Engineering</h3>
+                <p class="sc-desc">
+                  LLM orchestration, RAG pipelines, multi-model routing, vector
+                  databases, and intelligent automation at production scale.
+                </p>
+                <ul class="sc-list">
+                  <li>GPT-4o / Claude / Gemini 1.5</li>
+                  <li>LangChain / LangGraph</li>
+                  <li>pgvector RAG pipelines</li>
+                  <li>MCP tool-call integration</li>
+                  <li>SSE streaming completions</li>
+                </ul>
+              </div>
+
+              <div class="skill-card sc-3" data-wm="03">
+                <div class="sc-eyebrow">User Experience</div>
+                <h3 class="sc-num-title">03. Frontend Engineering</h3>
+                <p class="sc-desc">
+                  Pixel-perfect, performant React applications with complex
+                  state management, real-time features, and modern design
+                  systems.
+                </p>
+                <ul class="sc-list">
+                  <li>React.js / Redux Toolkit</li>
+                  <li>TypeScript / React Query</li>
+                  <li>Material-UI / TailwindCSS</li>
+                  <li>Real-time WebSocket UIs</li>
+                  <li>Document diff & editor systems</li>
+                </ul>
+              </div>
+
+              <div class="skill-card sc-4" data-wm="04">
+                <div class="sc-eyebrow">Infrastructure</div>
+                <h3 class="sc-num-title">04. Cloud &amp; DevOps</h3>
+                <p class="sc-desc">
+                  Containerized deployments, CI/CD pipelines, cloud
+                  infrastructure, and observability for mission-critical
+                  systems.
+                </p>
+                <ul class="sc-list">
+                  <li>AWS S3 / EC2 / Lambda</li>
+                  <li>Docker / Docker Compose</li>
+                  <li>GCP / Firebase</li>
+                  <li>Bitbucket CI pipelines</li>
+                  <li>Sentry error tracking</li>
+                </ul>
+              </div>
             </div>
-
-            <div class="skill-card sc-2" data-wm="02">
-              <div class="sc-eyebrow">Intelligence Layer</div>
-              <h3 class="sc-num-title">02. AI / ML Engineering</h3>
-              <p class="sc-desc">LLM orchestration, RAG pipelines, multi-model routing, vector databases, and intelligent automation at production scale.</p>
-              <ul class="sc-list">
-                <li>GPT-4o / Claude / Gemini 1.5</li>
-                <li>LangChain / LangGraph</li>
-                <li>pgvector RAG pipelines</li>
-                <li>MCP tool-call integration</li>
-                <li>SSE streaming completions</li>
-              </ul>
-            </div>
-
-            <div class="skill-card sc-3" data-wm="03">
-              <div class="sc-eyebrow">User Experience</div>
-              <h3 class="sc-num-title">03. Frontend Engineering</h3>
-              <p class="sc-desc">Pixel-perfect, performant React applications with complex state management, real-time features, and modern design systems.</p>
-              <ul class="sc-list">
-                <li>React.js / Redux Toolkit</li>
-                <li>TypeScript / React Query</li>
-                <li>Material-UI / TailwindCSS</li>
-                <li>Real-time WebSocket UIs</li>
-                <li>Document diff & editor systems</li>
-              </ul>
-            </div>
-
-            <div class="skill-card sc-4" data-wm="04">
-              <div class="sc-eyebrow">Infrastructure</div>
-              <h3 class="sc-num-title">04. Cloud &amp; DevOps</h3>
-              <p class="sc-desc">Containerized deployments, CI/CD pipelines, cloud infrastructure, and observability for mission-critical systems.</p>
-              <ul class="sc-list">
-                <li>AWS S3 / EC2 / Lambda</li>
-                <li>Docker / Docker Compose</li>
-                <li>GCP / Firebase</li>
-                <li>Bitbucket CI pipelines</li>
-                <li>Sentry error tracking</li>
-              </ul>
-            </div>
-
           </div>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════
        MY RECENT WORK (Projects)
   ══════════════════════════════════════════════ -->
-  <section id="projects" class="work-section">
-    <div class="container work-intro">
-      <p class="eyebrow reveal-fade">/ Selected work</p>
-      <h2 class="section-title reveal-fade" data-delay="100">My Recent <em>Work</em></h2>
-      <p class="section-sub reveal-fade" data-delay="180">Founding Engineer at <strong>Devslane</strong> · 2021&ndash;2026. Production systems shipped end-to-end — AI-native products, a government-scale platform, healthtech, and enterprise operations software.</p>
-      <p class="work-hint reveal-fade" data-delay="240"><span>Keep scrolling</span><i class="work-hint-arrow">→</i></p>
-    </div>
+    <section id="projects" class="work-section">
+      <div class="container work-intro">
+        <p class="eyebrow reveal-fade">/ Selected work</p>
+        <h2 class="section-title reveal-fade" data-delay="100">
+          My Recent <em>Work</em>
+        </h2>
+        <p class="section-sub reveal-fade" data-delay="180">
+          Founding Engineer at <strong>Devslane</strong> · 2021&ndash;2026.
+          Production systems shipped end-to-end — AI-native products, a
+          government-scale platform, healthtech, and enterprise operations
+          software.
+        </p>
+        <p class="work-hint reveal-fade" data-delay="240">
+          <span>Keep scrolling</span><i class="work-hint-arrow">→</i>
+        </p>
+      </div>
 
-    <!-- Pinned horizontal gallery (JS-driven; falls back to a vertical stack on mobile) -->
-    <div class="work-pin" id="work-pin">
-      <div class="work-stage" id="work-stage">
-        <div class="work-track" id="work-track">
-
-          <!-- 01 DUY -->
-          <article class="work-panel" data-i="1">
-            <div class="wp-media">
-              <div class="wp-window">
-                <div class="wp-bar"><i></i><i></i><i></i><span class="wp-url">dashboard.duy-heduk.org</span></div>
-                <div class="wp-shot-wrap"><img class="wp-shot" src="screens/duy.png" alt="DUY admin dashboard" onerror="this.onerror=null;this.src='screens/duy.svg'" /></div>
+      <!-- Pinned horizontal gallery (JS-driven; falls back to a vertical stack on mobile) -->
+      <div class="work-pin" id="work-pin">
+        <div class="work-stage" id="work-stage">
+          <div class="work-track" id="work-track">
+            <!-- 01 DUY -->
+            <article class="work-panel" data-i="1">
+              <div class="wp-media">
+                <div class="wp-window">
+                  <div class="wp-bar">
+                    <i></i><i></i><i></i
+                    ><span class="wp-url">dashboard.duy-heduk.org</span>
+                  </div>
+                  <div class="wp-shot-wrap">
+                    <img
+                      class="wp-shot"
+                      src="screens/duy.png"
+                      alt="DUY admin dashboard"
+                      onerror="
+                        this.onerror = null;
+                        this.src = 'screens/duy.svg';
+                      "
+                    />
+                  </div>
+                </div>
+                <span class="wp-badge">70K+ Students</span>
               </div>
-              <span class="wp-badge">70K+ Students</span>
-            </div>
-            <div class="wp-info">
-              <span class="wp-index">01</span>
-              <span class="wp-eyebrow">Government · Devslane</span>
-              <h3 class="wp-title">DUY — Devbhumi Udyamita Yojna</h3>
-              <span class="wp-year">Mar 2026 — Jun 2026</span>
-              <p class="wp-desc">State-wide entrepreneurship-programme dashboard for the Dept. of Higher Education, Govt. of Uttarakhand. Two SPAs, a serverless Lambda API, DynamoDB single-table system of record, and Postgres materialized-view dashboards — config-driven RBAC across 8 roles.</p>
-              <div class="wp-tags"><span>React</span><span>AWS Lambda</span><span>DynamoDB</span><span>Postgres</span><span>Terraform</span></div>
-              <div class="wp-impact"><div><strong>70K+</strong><small>Students onboarded</small></div><div><strong>8</strong><small>RBAC roles</small></div></div>
-            </div>
-          </article>
-
-          <!-- 02 Portia -->
-          <article class="work-panel" data-i="2">
-            <div class="wp-media">
-              <div class="wp-window">
-                <div class="wp-bar"><i></i><i></i><i></i><span class="wp-url">app.secondchair.ai</span></div>
-                <div class="wp-shot-wrap"><img class="wp-shot" src="screens/portia.png" alt="Second Chair / Portia dashboard" onerror="this.onerror=null;this.src='screens/portia.svg'" /></div>
+              <div class="wp-info">
+                <span class="wp-index">01</span>
+                <span class="wp-eyebrow">Government · Devslane</span>
+                <h3 class="wp-title">DUY — Devbhumi Udyamita Yojna</h3>
+                <span class="wp-year">Mar 2026 — Jun 2026</span>
+                <p class="wp-desc">
+                  State-wide entrepreneurship-programme dashboard for the Dept.
+                  of Higher Education, Govt. of Uttarakhand. Two SPAs, a
+                  serverless Lambda API, DynamoDB single-table system of record,
+                  and Postgres materialized-view dashboards — config-driven RBAC
+                  across 8 roles.
+                </p>
+                <div class="wp-tags">
+                  <span>React</span><span>AWS Lambda</span><span>DynamoDB</span
+                  ><span>Postgres</span><span>Terraform</span>
+                </div>
+                <div class="wp-impact">
+                  <div>
+                    <strong>70K+</strong><small>Students onboarded</small>
+                  </div>
+                  <div><strong>8</strong><small>RBAC roles</small></div>
+                </div>
               </div>
-              <span class="wp-badge">AI Native</span>
-            </div>
-            <div class="wp-info">
-              <span class="wp-index">02</span>
-              <span class="wp-eyebrow">AI Legal · Devslane</span>
-              <h3 class="wp-title">Second Chair / Portia</h3>
-              <span class="wp-year">Feb 2025 — Mar 2026</span>
-              <p class="wp-desc">AI-native legal workspace — multi-model LLM orchestration, a pgvector RAG pipeline with per-scope vector isolation, document-aware chat, automated redlining, and real-time SSE streaming for attorney workflows.</p>
-              <div class="wp-tags"><span>AdonisJS 6</span><span>LangChain</span><span>GPT-4o</span><span>Claude</span><span>pgvector</span></div>
-              <div class="wp-impact"><div><strong>40%</strong><small>Manual review cut</small></div><div><strong>3</strong><small>LLMs in parallel</small></div></div>
-            </div>
-          </article>
+            </article>
 
-          <!-- 03 HeartSuccess -->
-          <article class="work-panel" data-i="3">
-            <div class="wp-media">
-              <div class="wp-window">
-                <div class="wp-bar"><i></i><i></i><i></i><span class="wp-url">heartsuccess.health</span></div>
-                <div class="wp-shot-wrap"><img class="wp-shot" src="screens/heartsuccess.png" alt="HeartSuccess pharmacy savings" onerror="this.onerror=null;this.src='screens/heartsuccess.svg'" /></div>
+            <!-- 02 Portia -->
+            <article class="work-panel" data-i="2">
+              <div class="wp-media">
+                <div class="wp-window">
+                  <div class="wp-bar">
+                    <i></i><i></i><i></i
+                    ><span class="wp-url">app.secondchair.ai</span>
+                  </div>
+                  <div class="wp-shot-wrap">
+                    <img
+                      class="wp-shot"
+                      src="screens/portia.png"
+                      alt="Second Chair / Portia dashboard"
+                      onerror="
+                        this.onerror = null;
+                        this.src = 'screens/portia.svg';
+                      "
+                    />
+                  </div>
+                </div>
+                <span class="wp-badge">AI Native</span>
               </div>
-              <span class="wp-badge">HealthTech</span>
-            </div>
-            <div class="wp-info">
-              <span class="wp-index">03</span>
-              <span class="wp-eyebrow">HealthTech · Devslane</span>
-              <h3 class="wp-title">HeartSuccess</h3>
-              <span class="wp-year">Oct 2024 — Feb 2025</span>
-              <p class="wp-desc">A patient-first platform that pulls scattered drug-pricing data into one place — comparing medication savings across pharmacies and discount programs so patients can afford life-saving care and have informed conversations with their providers.</p>
-              <div class="wp-tags"><span>React</span><span>Node.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Pricing APIs</span></div>
-              <div class="wp-impact"><div><strong>1 place</strong><small>For drug pricing</small></div><div><strong>Multi-Rx</strong><small>Savings compared</small></div></div>
-            </div>
-          </article>
-
-          <!-- 04 Surfside Frozen -->
-          <article class="work-panel" data-i="4">
-            <div class="wp-media">
-              <div class="wp-window">
-                <div class="wp-bar"><i></i><i></i><i></i><span class="wp-url">surfside-frozen.app</span></div>
-                <div class="wp-shot-wrap"><img class="wp-shot" src="screens/surfside-frozen.png" alt="Surfside Frozen production" onerror="this.onerror=null;this.src='screens/surfside-frozen.svg'" /></div>
+              <div class="wp-info">
+                <span class="wp-index">02</span>
+                <span class="wp-eyebrow">AI Legal · Devslane</span>
+                <h3 class="wp-title">Second Chair / Portia</h3>
+                <span class="wp-year">Feb 2025 — Mar 2026</span>
+                <p class="wp-desc">
+                  AI-native legal workspace — multi-model LLM orchestration, a
+                  pgvector RAG pipeline with per-scope vector isolation,
+                  document-aware chat, automated redlining, and real-time SSE
+                  streaming for attorney workflows.
+                </p>
+                <div class="wp-tags">
+                  <span>AdonisJS 6</span><span>LangChain</span
+                  ><span>GPT-4o</span><span>Claude</span><span>pgvector</span>
+                </div>
+                <div class="wp-impact">
+                  <div>
+                    <strong>40%</strong><small>Manual review cut</small>
+                  </div>
+                  <div><strong>3</strong><small>LLMs in parallel</small></div>
+                </div>
               </div>
-              <span class="wp-badge">Enterprise</span>
-            </div>
-            <div class="wp-info">
-              <span class="wp-index">04</span>
-              <span class="wp-eyebrow">Operations · Devslane</span>
-              <h3 class="wp-title">Surfside Foods — Frozen</h3>
-              <span class="wp-year">Nov 2023 — Oct 2024</span>
-              <p class="wp-desc">Production-management platform for frozen seafood operations — daily production goals, lot &amp; box tracking, marination batches, input-weight estimates, and automated production-summary reporting across the plant floor.</p>
-              <div class="wp-tags"><span>React</span><span>Material-UI</span><span>Node.js</span><span>PostgreSQL</span><span>Excel/PDF</span></div>
-              <div class="wp-impact"><div><strong>Lot-level</strong><small>Traceability</small></div><div><strong>Daily</strong><small>Goals &amp; reports</small></div></div>
-            </div>
-          </article>
+            </article>
 
-          <!-- 05 Matrix Rental -->
-          <article class="work-panel" data-i="5">
-            <div class="wp-media">
-              <div class="wp-window">
-                <div class="wp-bar"><i></i><i></i><i></i><span class="wp-url">matrixrentals.com</span></div>
-                <div class="wp-shot-wrap"><img class="wp-shot" src="screens/matrix-rental.png" alt="Matrix Rental applications" onerror="this.onerror=null;this.src='screens/matrix-rental.svg'" /></div>
+            <!-- 03 HeartSuccess -->
+            <article class="work-panel" data-i="3">
+              <div class="wp-media">
+                <div class="wp-window">
+                  <div class="wp-bar">
+                    <i></i><i></i><i></i
+                    ><span class="wp-url">heartsuccess.health</span>
+                  </div>
+                  <div class="wp-shot-wrap">
+                    <img
+                      class="wp-shot"
+                      src="screens/heartsuccess.png"
+                      alt="HeartSuccess pharmacy savings"
+                      onerror="
+                        this.onerror = null;
+                        this.src = 'screens/heartsuccess.svg';
+                      "
+                    />
+                  </div>
+                </div>
+                <span class="wp-badge">HealthTech</span>
               </div>
-              <span class="wp-badge">15K+ MAU</span>
-            </div>
-            <div class="wp-info">
-              <span class="wp-index">05</span>
-              <span class="wp-eyebrow">PropTech · Devslane</span>
-              <h3 class="wp-title">Matrix Rental Solutions</h3>
-              <span class="wp-year">Oct 2022 — Nov 2023</span>
-              <p class="wp-desc">Applicant-and-landlord rental platform — identity &amp; income verification, a deterministic scoring engine, housing-authority application workflows, and multi-tenant RBAC with audit logging for fair-housing compliance.</p>
-              <div class="wp-tags"><span>Node.js</span><span>React</span><span>PostgreSQL</span><span>Redis</span><span>AWS</span></div>
-              <div class="wp-impact"><div><strong>15K+</strong><small>Monthly active users</small></div><div><strong>50%</strong><small>Review time cut</small></div></div>
-            </div>
-          </article>
-
-          <!-- 06 Surfside Fresh -->
-          <article class="work-panel" data-i="6">
-            <div class="wp-media">
-              <div class="wp-window">
-                <div class="wp-bar"><i></i><i></i><i></i><span class="wp-url">surfsidefoods.app</span></div>
-                <div class="wp-shot-wrap"><img class="wp-shot" src="screens/surfside-fresh.png" alt="Surfside Fresh operations" onerror="this.onerror=null;this.src='screens/surfside-fresh.svg'" /></div>
+              <div class="wp-info">
+                <span class="wp-index">03</span>
+                <span class="wp-eyebrow">HealthTech · Devslane</span>
+                <h3 class="wp-title">HeartSuccess</h3>
+                <span class="wp-year">Oct 2024 — Feb 2025</span>
+                <p class="wp-desc">
+                  A patient-first platform that pulls scattered drug-pricing
+                  data into one place — comparing medication savings across
+                  pharmacies and discount programs so patients can afford
+                  life-saving care and have informed conversations with their
+                  providers.
+                </p>
+                <div class="wp-tags">
+                  <span>React</span><span>Node.js</span><span>TypeScript</span
+                  ><span>PostgreSQL</span><span>Pricing APIs</span>
+                </div>
+                <div class="wp-impact">
+                  <div>
+                    <strong>1 place</strong><small>For drug pricing</small>
+                  </div>
+                  <div>
+                    <strong>Multi-Rx</strong><small>Savings compared</small>
+                  </div>
+                </div>
               </div>
-              <span class="wp-badge">Zero Downtime</span>
-            </div>
-            <div class="wp-info">
-              <span class="wp-index">06</span>
-              <span class="wp-eyebrow">Operations · Devslane</span>
-              <h3 class="wp-title">Surfside Foods — Fresh</h3>
-              <span class="wp-year">Jun 2021 — Oct 2022</span>
-              <p class="wp-desc">End-to-end fresh seafood operations platform covering harvest, packing, distribution, and yield reporting — backed by a zero-downtime cloud-to-on-prem sync engine and automated Excel/PDF compliance reporting.</p>
-              <div class="wp-tags"><span>React</span><span>Material-UI</span><span>Node.js</span><span>WebSockets</span><span>S3</span></div>
-              <div class="wp-impact"><div><strong>0</strong><small>Downtime deploys</small></div><div><strong>55%</strong><small>Reporting effort cut</small></div></div>
-            </div>
-          </article>
+            </article>
 
-        </div>
+            <!-- 04 Surfside Frozen -->
+            <article class="work-panel" data-i="4">
+              <div class="wp-media">
+                <div class="wp-window">
+                  <div class="wp-bar">
+                    <i></i><i></i><i></i
+                    ><span class="wp-url">surfside-frozen.app</span>
+                  </div>
+                  <div class="wp-shot-wrap">
+                    <img
+                      class="wp-shot"
+                      src="screens/surfside-frozen.png"
+                      alt="Surfside Frozen production"
+                      onerror="
+                        this.onerror = null;
+                        this.src = 'screens/surfside-frozen.svg';
+                      "
+                    />
+                  </div>
+                </div>
+                <span class="wp-badge">Enterprise</span>
+              </div>
+              <div class="wp-info">
+                <span class="wp-index">04</span>
+                <span class="wp-eyebrow">Operations · Devslane</span>
+                <h3 class="wp-title">Surfside Foods — Frozen</h3>
+                <span class="wp-year">Nov 2023 — Oct 2024</span>
+                <p class="wp-desc">
+                  Production-management platform for frozen seafood operations —
+                  daily production goals, lot &amp; box tracking, marination
+                  batches, input-weight estimates, and automated
+                  production-summary reporting across the plant floor.
+                </p>
+                <div class="wp-tags">
+                  <span>React</span><span>Material-UI</span><span>Node.js</span
+                  ><span>PostgreSQL</span><span>Excel/PDF</span>
+                </div>
+                <div class="wp-impact">
+                  <div>
+                    <strong>Lot-level</strong><small>Traceability</small>
+                  </div>
+                  <div>
+                    <strong>Daily</strong><small>Goals &amp; reports</small>
+                  </div>
+                </div>
+              </div>
+            </article>
 
-        <!-- HUD: counter + scrub progress -->
-        <div class="work-hud" aria-hidden="true">
-          <div class="work-counter"><span id="work-cur">01</span><i>/</i>06</div>
-          <div class="work-progress"><span class="work-progress-fill" id="work-progress-fill"></span></div>
+            <!-- 05 Matrix Rental -->
+            <article class="work-panel" data-i="5">
+              <div class="wp-media">
+                <div class="wp-window">
+                  <div class="wp-bar">
+                    <i></i><i></i><i></i
+                    ><span class="wp-url">matrixrentals.com</span>
+                  </div>
+                  <div class="wp-shot-wrap">
+                    <img
+                      class="wp-shot"
+                      src="screens/matrix-rental.png"
+                      alt="Matrix Rental applications"
+                      onerror="
+                        this.onerror = null;
+                        this.src = 'screens/matrix-rental.svg';
+                      "
+                    />
+                  </div>
+                </div>
+                <span class="wp-badge">15K+ MAU</span>
+              </div>
+              <div class="wp-info">
+                <span class="wp-index">05</span>
+                <span class="wp-eyebrow">PropTech · Devslane</span>
+                <h3 class="wp-title">Matrix Rental Solutions</h3>
+                <span class="wp-year">Oct 2022 — Nov 2023</span>
+                <p class="wp-desc">
+                  Applicant-and-landlord rental platform — identity &amp; income
+                  verification, a deterministic scoring engine,
+                  housing-authority application workflows, and multi-tenant RBAC
+                  with audit logging for fair-housing compliance.
+                </p>
+                <div class="wp-tags">
+                  <span>Node.js</span><span>React</span><span>PostgreSQL</span
+                  ><span>Redis</span><span>AWS</span>
+                </div>
+                <div class="wp-impact">
+                  <div>
+                    <strong>15K+</strong><small>Monthly active users</small>
+                  </div>
+                  <div><strong>50%</strong><small>Review time cut</small></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 06 Surfside Fresh -->
+            <article class="work-panel" data-i="6">
+              <div class="wp-media">
+                <div class="wp-window">
+                  <div class="wp-bar">
+                    <i></i><i></i><i></i
+                    ><span class="wp-url">surfsidefoods.app</span>
+                  </div>
+                  <div class="wp-shot-wrap">
+                    <img
+                      class="wp-shot"
+                      src="screens/surfside-fresh.png"
+                      alt="Surfside Fresh operations"
+                      onerror="
+                        this.onerror = null;
+                        this.src = 'screens/surfside-fresh.svg';
+                      "
+                    />
+                  </div>
+                </div>
+                <span class="wp-badge">Zero Downtime</span>
+              </div>
+              <div class="wp-info">
+                <span class="wp-index">06</span>
+                <span class="wp-eyebrow">Operations · Devslane</span>
+                <h3 class="wp-title">Surfside Foods — Fresh</h3>
+                <span class="wp-year">Jun 2021 — Oct 2022</span>
+                <p class="wp-desc">
+                  End-to-end fresh seafood operations platform covering harvest,
+                  packing, distribution, and yield reporting — backed by a
+                  zero-downtime cloud-to-on-prem sync engine and automated
+                  Excel/PDF compliance reporting.
+                </p>
+                <div class="wp-tags">
+                  <span>React</span><span>Material-UI</span><span>Node.js</span
+                  ><span>WebSockets</span><span>S3</span>
+                </div>
+                <div class="wp-impact">
+                  <div><strong>0</strong><small>Downtime deploys</small></div>
+                  <div>
+                    <strong>55%</strong><small>Reporting effort cut</small>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- HUD: counter + scrub progress -->
+          <div class="work-hud" aria-hidden="true">
+            <div class="work-counter">
+              <span id="work-cur">01</span><i>/</i>06
+            </div>
+            <div class="work-progress">
+              <span class="work-progress-fill" id="work-progress-fill"></span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════
        ABOUT SECTION
   ══════════════════════════════════════════════ -->
-  <section id="about" class="about-section">
-    <div class="container">
-      <p class="eyebrow">/ about me</p>
-      <div class="about-grid">
-        <div class="about-left">
-          <h2 class="section-title about-title">I architect and ship production&#8209;grade systems &mdash; <em>fast.</em></h2>
-        </div>
-        <div class="about-right">
-          <p>I'm a Senior Software Engineer with 5+ years of experience building at the intersection of backend engineering, AI/ML systems, and frontend craft. From AI-native legal workspaces to high-scale rental platforms serving 15,000+ MAU.</p>
-          <p>I believe great software is a blend of technical depth and product thinking. I lead with architecture, iterate with curiosity, and ship with conviction.</p>
-          <div class="about-stats">
-            <div class="astat"><span class="astat-num" data-count="5" data-suffix="+">5+</span><span class="astat-lbl">Years XP</span></div>
-            <div class="astat"><span class="astat-num" data-count="15" data-suffix="K+ MAU">15K+</span><span class="astat-lbl">Users Served</span></div>
-            <div class="astat"><span class="astat-num" data-count="6" data-suffix="+">6+</span><span class="astat-lbl">Products Shipped</span></div>
+    <section id="about" class="about-section">
+      <div class="container">
+        <p class="eyebrow">/ about me</p>
+        <div class="about-grid">
+          <div class="about-left">
+            <h2 class="section-title about-title">
+              I architect and ship production&#8209;grade systems &mdash;
+              <em>fast.</em>
+            </h2>
           </div>
-          <div class="about-ctas">
-            <a href="Krishna_Kant_Sharma_Resume7.pdf" download class="btn-solid">Download CV</a>
-            <a href="https://github.com/kksharmaz786" target="_blank" rel="noopener" class="btn-outline">GitHub ↗</a>
+          <div class="about-right">
+            <p>
+              I'm a Senior Software Engineer with 5+ years of experience
+              building at the intersection of backend engineering, AI/ML
+              systems, and frontend craft. From AI-native legal workspaces to
+              high-scale rental platforms serving 15,000+ MAU.
+            </p>
+            <p>
+              I believe great software is a blend of technical depth and product
+              thinking. I lead with architecture, iterate with curiosity, and
+              ship with conviction.
+            </p>
+            <div class="about-stats">
+              <div class="astat">
+                <span class="astat-num" data-count="5" data-suffix="+">5+</span
+                ><span class="astat-lbl">Years XP</span>
+              </div>
+              <div class="astat">
+                <span class="astat-num" data-count="15" data-suffix="K+ MAU"
+                  >15K+</span
+                ><span class="astat-lbl">Users Served</span>
+              </div>
+              <div class="astat">
+                <span class="astat-num" data-count="6" data-suffix="+">6+</span
+                ><span class="astat-lbl">Products Shipped</span>
+              </div>
+            </div>
+            <div class="about-ctas">
+              <a
+                href="Krishna_Kant_Sharma_Resume7.pdf"
+                download
+                class="btn-solid"
+                >Download CV</a
+              >
+              <a
+                href="https://github.com/kksharmaz786"
+                target="_blank"
+                rel="noopener"
+                class="btn-outline"
+                >GitHub ↗</a
+              >
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════
        EDUCATION SECTION (with scroll timeline)
   ══════════════════════════════════════════════ -->
-  <section id="education" class="edu-section">
-    <div class="container">
-      <p class="eyebrow reveal-fade">/ education & certifications</p>
-      <h2 class="section-title reveal-fade" data-delay="80">Where I <em>learned</em></h2>
+    <section id="education" class="edu-section">
+      <div class="container">
+        <p class="eyebrow reveal-fade">/ education & certifications</p>
+        <h2 class="section-title reveal-fade" data-delay="80">
+          Where I <em>learned</em>
+        </h2>
 
-      <div class="edu-timeline">
-        <!-- Animated vertical line -->
-        <div class="edu-line" id="edu-line"></div>
+        <div class="edu-timeline">
+          <!-- Animated vertical line -->
+          <div class="edu-line" id="edu-line"></div>
 
-        <!-- Education Item 1: B.Tech -->
-        <div class="edu-item reveal-left">
-          <div class="edu-dot"></div>
-          <div class="edu-card">
-            <div class="edu-card-header">
-              <div class="edu-logo edu-logo-gla">GLA</div>
-              <div>
-                <div class="edu-degree">B.Tech — Computer Science & Engineering</div>
-                <div class="edu-school">GLA University, Mathura</div>
+          <!-- Education Item 1: B.Tech -->
+          <div class="edu-item reveal-left">
+            <div class="edu-dot"></div>
+            <div class="edu-card">
+              <div class="edu-card-header">
+                <div class="edu-logo edu-logo-gla">GLA</div>
+                <div>
+                  <div class="edu-degree">
+                    B.Tech — Computer Science & Engineering
+                  </div>
+                  <div class="edu-school">GLA University, Mathura</div>
+                </div>
+              </div>
+              <div class="edu-year-badge">2018 — 2022</div>
+              <p class="edu-desc">
+                Graduated in the top 3% of the batch. Focused on data
+                structures, algorithms, distributed systems, and software
+                engineering principles.
+              </p>
+              <div class="edu-highlights">
+                <span>Top 3% Batch Rank</span>
+                <span>CS & Engineering</span>
+                <span>4 Years</span>
               </div>
             </div>
-            <div class="edu-year-badge">2018 — 2022</div>
-            <p class="edu-desc">Graduated in the top 5% of the batch. Focused on data structures, algorithms, distributed systems, and software engineering principles.</p>
-            <div class="edu-highlights">
-              <span>Top 5% Batch Rank</span>
-              <span>CS & Engineering</span>
-              <span>4 Years</span>
+          </div>
+
+          <!-- Education Item 2: Class XII -->
+          <div class="edu-item edu-item-right reveal-right">
+            <div class="edu-dot"></div>
+            <div class="edu-card">
+              <div class="edu-card-header">
+                <div class="edu-logo edu-logo-gla">RLVM</div>
+                <div>
+                  <div class="edu-degree">Class XII (PCM) — CBSE Board</div>
+                  <div class="edu-school">
+                    Rajendra Lohia Vidya Mandir, Hathras
+                  </div>
+                </div>
+              </div>
+              <div class="edu-year-badge">2017 — 2018</div>
+              <p class="edu-desc">
+                Focused on physics, chemistry, mathematics, and computer science
+                basics.
+              </p>
+              <div class="edu-highlights">
+                <span>CBSE Board</span>
+                <span>PCM Stream</span>
+                <span>1 Year</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Item 3: Class X -->
+          <div class="edu-item reveal-left">
+            <div class="edu-dot"></div>
+            <div class="edu-card">
+              <div class="edu-card-header">
+                <div class="edu-logo edu-logo-gla">MVM</div>
+                <div>
+                  <div class="edu-degree">Class X — CBSE Board</div>
+                  <div class="edu-school">Maharishi Vidya Mandir, Aligarh</div>
+                </div>
+              </div>
+              <div class="edu-year-badge">2015 — 2016</div>
+              <p class="edu-desc">
+                Core secondary education focusing on mathematics, science, and
+                computer applications.
+              </p>
+              <div class="edu-highlights">
+                <span>CBSE Board</span>
+                <span>Science & Math</span>
+                <span>1 Year</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Item 4: Certifications -->
+          <div class="edu-item edu-item-right reveal-right">
+            <div class="edu-dot"></div>
+            <div class="edu-card">
+              <div class="edu-card-header">
+                <div class="edu-logo edu-logo-cert">✦</div>
+                <div>
+                  <div class="edu-degree">Professional Certifications</div>
+                  <div class="edu-school">Coursera · Udemy · Self-taught</div>
+                </div>
+              </div>
+              <div class="edu-year-badge">2021 — Present</div>
+              <p class="edu-desc">
+                Continuously upskilling in AI/ML, cloud architecture, and
+                advanced system design.
+              </p>
+              <div class="edu-highlights">
+                <span>LangChain / LangGraph</span>
+                <span>AWS Architecture</span>
+                <span>System Design</span>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- Education Item 2: Class XII -->
-        <div class="edu-item edu-item-right reveal-right">
-          <div class="edu-dot"></div>
-          <div class="edu-card">
-            <div class="edu-card-header">
-              <div class="edu-logo edu-logo-gla">RLVM</div>
-              <div>
-                <div class="edu-degree">Class XII (PCM) — CBSE Board</div>
-                <div class="edu-school">Rajendra Lohia Vidya Mandir, Hathras</div>
-              </div>
-            </div>
-            <div class="edu-year-badge">2017 — 2018</div>
-            <p class="edu-desc">Focused on physics, chemistry, mathematics, and computer science basics.</p>
-            <div class="edu-highlights">
-              <span>CBSE Board</span>
-              <span>PCM Stream</span>
-              <span>1 Year</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Education Item 3: Class X -->
-        <div class="edu-item reveal-left">
-          <div class="edu-dot"></div>
-          <div class="edu-card">
-            <div class="edu-card-header">
-              <div class="edu-logo edu-logo-gla">MVM</div>
-              <div>
-                <div class="edu-degree">Class X — CBSE Board</div>
-                <div class="edu-school">Maharishi Vidya Mandir, Aligarh</div>
-              </div>
-            </div>
-            <div class="edu-year-badge">2015 — 2016</div>
-            <p class="edu-desc">Core secondary education focusing on mathematics, science, and computer applications.</p>
-            <div class="edu-highlights">
-              <span>CBSE Board</span>
-              <span>Science & Math</span>
-              <span>1 Year</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Education Item 4: Certifications -->
-        <div class="edu-item edu-item-right reveal-right">
-          <div class="edu-dot"></div>
-          <div class="edu-card">
-            <div class="edu-card-header">
-              <div class="edu-logo edu-logo-cert">✦</div>
-              <div>
-                <div class="edu-degree">Professional Certifications</div>
-                <div class="edu-school">Coursera · Udemy · Self-taught</div>
-              </div>
-            </div>
-            <div class="edu-year-badge">2021 — Present</div>
-            <p class="edu-desc">Continuously upskilling in AI/ML, cloud architecture, and advanced system design.</p>
-            <div class="edu-highlights">
-              <span>LangChain / LangGraph</span>
-              <span>AWS Architecture</span>
-              <span>System Design</span>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════
        CONTACT / FOOTER
   ══════════════════════════════════════════════ -->
-  <section id="contact" class="contact-section">
-    <div class="contact-bg-name" aria-hidden="true">Krishna Sharma</div>
-    <div class="contact-marquee-wrap">
-      <div class="contact-marquee">
-        <span>Let's work together ✦ &nbsp;</span>
-        <span>Let's work together ✦ &nbsp;</span>
-        <span>Let's work together ✦ &nbsp;</span>
-        <span>Let's work together ✦ &nbsp;</span>
+    <section id="contact" class="contact-section">
+      <div class="contact-bg-name" aria-hidden="true">Krishna Sharma</div>
+      <div class="contact-marquee-wrap">
+        <div class="contact-marquee">
+          <span>Let's work together ✦ &nbsp;</span>
+          <span>Let's work together ✦ &nbsp;</span>
+          <span>Let's work together ✦ &nbsp;</span>
+          <span>Let's work together ✦ &nbsp;</span>
+        </div>
       </div>
-    </div>
-    <div class="contact-links">
-      <a href="mailto:kksharmaz786@gmail.com" class="contact-link">✉ kksharmaz786@gmail.com</a>
-      <a href="tel:+918445080110" class="contact-link">✆ +91 8445080110</a>
-      <a href="https://www.linkedin.com/in/krishna-kant-sharma-253a98195/" target="_blank" rel="noopener" class="contact-link">⌁ LinkedIn ↗</a>
-    </div>
-    <div class="contact-footer">
-      <span>© 2025 Krishna Kant Sharma</span>
-      <span>Senior Software Engineer · India</span>
-    </div>
-  </section>
-
-  <!-- BOTTOM NAV -->
-  <nav class="bottom-nav" id="bottom-nav">
-    <span class="bn-indicator" id="bn-indicator" aria-hidden="true"></span>
-    <a href="#hero" class="bn-icon" title="Home">
-      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-    </a>
-    <a href="#skills" class="bn-link">Skills</a>
-    <a href="#projects" class="bn-link">Work</a>
-    <a href="#about" class="bn-link">About</a>
-    <a href="#education" class="bn-link">Education</a>
-    <a href="mailto:kksharmaz786@gmail.com" class="bn-cta">Contact me</a>
-  </nav>
-
-  <!-- FLOATING CARD (position:fixed, JS-controlled) -->
-  <div id="floating-card" class="floating-card">
-    <div class="fc-inner" id="fc-inner">
-      <div class="fc-front">
-        <img src="krishna_photo.jpg" alt="Krishna Kant Sharma"
-          onerror="this.style.display='none';document.getElementById('fc-fallback').style.display='flex'" />
-        <div id="fc-fallback" class="fc-fallback" style="display:none">KKS</div>
+      <div class="contact-links">
+        <a href="mailto:kksharmaz786@gmail.com" class="contact-link"
+          >✉ kksharmaz786@gmail.com</a
+        >
+        <a href="tel:+918445080110" class="contact-link">✆ +91 8445080110</a>
+        <a
+          href="https://www.linkedin.com/in/krishna-kant-sharma-253a98195/"
+          target="_blank"
+          rel="noopener"
+          class="contact-link"
+          >⌁ LinkedIn ↗</a
+        >
       </div>
-      <div class="fc-back">
-        <div class="fc-back-content">
-          <div class="fc-back-tag">Full-Stack · AI/ML · Systems</div>
-          <div class="fc-back-name">Krishna<br>Kant<br>Sharma</div>
-          <div class="fc-back-role">Senior Software Engineer</div>
-          <div class="fc-back-divider"></div>
-          <div class="fc-back-stats">
-            <div><strong>5+</strong><small>Years XP</small></div>
-            <div><strong>15K+</strong><small>MAU Built</small></div>
-            <div><strong>6+</strong><small>Products</small></div>
+      <div class="contact-footer">
+        <span>© 2025 Krishna Kant Sharma</span>
+        <span>Senior Software Engineer · India</span>
+      </div>
+    </section>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav" id="bottom-nav">
+      <span class="bn-indicator" id="bn-indicator" aria-hidden="true"></span>
+      <a href="#hero" class="bn-icon" title="Home">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+        </svg>
+      </a>
+      <a href="#skills" class="bn-link">Skills</a>
+      <a href="#projects" class="bn-link">Work</a>
+      <a href="#about" class="bn-link">About</a>
+      <a href="#education" class="bn-link">Education</a>
+      <a href="mailto:kksharmaz786@gmail.com" class="bn-cta">Contact me</a>
+    </nav>
+
+    <!-- FLOATING CARD (position:fixed, JS-controlled) -->
+    <div id="floating-card" class="floating-card">
+      <div class="fc-inner" id="fc-inner">
+        <div class="fc-front">
+          <img
+            src="kk.png"
+            alt="Krishna Kant Sharma"
+            onerror="
+              this.style.display = 'none';
+              document.getElementById('fc-fallback').style.display = 'flex';
+            "
+          />
+          <div id="fc-fallback" class="fc-fallback" style="display: none">
+            KKS
+          </div>
+        </div>
+        <div class="fc-back">
+          <div class="fc-back-content">
+            <div class="fc-back-tag">Full-Stack · AI/ML · Systems</div>
+            <div class="fc-back-name">Krishna<br />Kant<br />Sharma</div>
+            <div class="fc-back-role">Senior Software Engineer</div>
+            <div class="fc-back-divider"></div>
+            <div class="fc-back-stats">
+              <div><strong>5+</strong><small>Years XP</small></div>
+              <div><strong>15K+</strong><small>MAU Built</small></div>
+              <div><strong>6+</strong><small>Products</small></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script src="script.js?v=30"></script>
-</body>
+    <script src="script.js?v=41"></script>
+  </body>
 </html>
